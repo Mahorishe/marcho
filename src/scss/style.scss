@@ -3,7 +3,63 @@
 @import 'reset';
 @import 'global';
 
+.header{
+  padding: 40px 0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
+.menu{
+  &__list{
+    display: flex;
+  }
+  &__list-item + .menu__list-item{
+    margin-left: 35px;
+  }
+  &__list-link{
+    @extend %quicksand-400;
+    text-transform: uppercase;
+    padding-bottom: 1px ;
+    color: $title;
+    border-bottom: 2px solid transparent;
+    transition: all .3s;
+    &:hover{
+      @extend %quicksand-500;
+      color: $accent;
+      border-bottom: 1px solid $accent;
+    }
+  }
+  &__list-link--active{
+    @extend %quicksand-500;
+    color: $accent;
+    border-bottom: 1px solid $accent;
+  } 
+}
 
+.user-nav{
+  display: flex;
+  &__link{
+    position: relative;
+  }
+  &__link + .user-nav__link{
+    padding-left: 25px;
+  }
+  &__count{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent;
+    color: #fff;
+    top: -9px;
+    right: -15px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+  }
+}
 
 @import 'media';
