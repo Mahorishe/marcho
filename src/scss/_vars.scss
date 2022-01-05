@@ -1,6 +1,7 @@
 $default: #8b8b8b;
 $accent: #fe3e57;
 $title: #29282d;
+$bg: #f6f6f6;
 
 %quicksand-400{
   font-family: 'Quicksand', sans-serif;
@@ -15,6 +16,11 @@ $title: #29282d;
 %roboto-400{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+}
+
+%roboto-500{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
 %roboto-700{
