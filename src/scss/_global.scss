@@ -25,3 +25,19 @@ a{
   font-size: 16px;
   line-height: 26px;
 }
+
+.title{
+  @extend %roboto-700;
+  font-size: 48px;
+  line-height: 65px;
+  color: $title;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.descr{
+  text-align: center;
+  max-width: 570px;
+  margin: 0 auto 55px;
+}
