@@ -155,6 +155,18 @@
   }
 }
 
+.top{
+  &__container{
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 120px 0 130px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+  }
+}
+
 .slider{
   background-image: url('../images/slider/slider-bg.png');
   background-repeat: no-repeat;
@@ -652,6 +664,54 @@
     width: 10px;
     height: 8px;
     background-image: url('../images/icons/arrow.svg');
+  }
+}
+
+.modal{
+  max-width: 570px;
+  margin: 0 auto 115px;
+  padding-top: 100px;
+  &__links{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__link{
+    @extend %roboto-400;
+    font-size: 22px;
+    color: #909090;
+    text-transform: uppercase;
+    margin: 0 30px;
+  }
+  &__link--active{
+    color: $accent;
+  }
+  &__label{
+    display: block;
+    margin-bottom: 30px;
+  }
+  &__input{
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: $bg;
+    height: 60px;
+    margin-top: 5px;
+    padding: 0 15px
+  }
+  &__btn{
+    display: block;
+    @extend %roboto-400;
+    width: 100%;
+    border: none;
+    background-color: $title;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  &__fogot-pass{
+    color: $accent;
   }
 }
 @import 'media';
