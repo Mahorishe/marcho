@@ -707,11 +707,15 @@
     text-transform: uppercase;
     color: #fff;
     padding: 15px;
-    margin-bottom: 10px;
     cursor: pointer;
   }
   &__fogot-pass{
+    display: inline-block;
+    margin-top: 10px;
     color: $accent;
+  }
+  &__text{
+    margin-bottom: 25px;
   }
 }
 @import 'media';
