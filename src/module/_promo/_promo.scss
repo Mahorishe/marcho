@@ -1,0 +1,51 @@
+.promo{
+  background-image: url('../images/promo-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0 160px;
+  text-align: center;
+  &__inner{
+    max-width: 570px;
+    width: 100%;
+    margin-left: auto
+  }
+  &__subtitle{
+    text-transform: uppercase;
+    color: $accent;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  &__clock{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+  }
+  &__clock-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-color: rgb(255, 255, 255);
+    span{
+      @extend %roboto-700;
+      font-size: 48px;
+      color: $title;
+      margin-top: 12px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link{
+    display: inline-block;
+    color: $title;
+    text-transform: uppercase;
+    padding: 14px 27px;
+    margin-top: 55px;
+    border: 1px solid $accent;
+  }
+}

@@ -1,0 +1,51 @@
+.modal{
+  max-width: 570px;
+  margin: 0 auto 115px;
+  padding-top: 100px;
+  &__links{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__link{
+    @extend %roboto-400;
+    font-size: 22px;
+    color: #909090;
+    text-transform: uppercase;
+    margin: 0 30px;
+  }
+  &__link--active{
+    color: $accent;
+  }
+  &__label{
+    display: block;
+    margin-bottom: 30px;
+  }
+  &__input{
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: $bg;
+    height: 60px;
+    margin-top: 5px;
+    padding: 0 15px
+  }
+  &__btn{
+    display: block;
+    @extend %roboto-400;
+    width: 100%;
+    border: none;
+    background-color: $title;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+  }
+  &__fogot-pass{
+    display: inline-block;
+    margin-top: 10px;
+    color: $accent;
+  }
+  &__text{
+    margin-bottom: 25px;
+  }
+}

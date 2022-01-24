@@ -1,14 +1,16 @@
 const { src, dest, watch, series, parallel } = require('gulp');
-const scss          = require('gulp-sass')(require('sass'));
-const concat        = require('gulp-concat');
-const autoprefixer  = require('gulp-autoprefixer');
-const uglify        = require('gulp-uglify');
-const imagemin      = require('gulp-imagemin');
-const del           = require('del');
-const sync          = require('browser-sync').create();
-const fs            = require('fs');
-const fonter        = require('gulp-fonter');
-const ttf2woff2     = require('gulp-ttf2woff2');
+const scss           = require('gulp-sass')(require('sass'));
+const concat         = require('gulp-concat');
+const autoprefixer   = require('gulp-autoprefixer');
+const uglify         = require('gulp-uglify');
+const imagemin       = require('gulp-imagemin');
+const nunjucksRender = require('gulp-nunjucks-render');
+const rename         = require('gulp-rename');
+const del            = require('del');
+const sync           = require('browser-sync').create();
+const fs             = require('fs');
+const fonter         = require('gulp-fonter');
+const ttf2woff2      = require('gulp-ttf2woff2');
 
 const browserSync = () => {
   sync.init({
@@ -19,12 +21,22 @@ const browserSync = () => {
   })
 }
 
+const nunjucks = () => {
+  return src('src/njk/*.njk')
+    .pipe(nunjucksRender())
+    .pipe(dest('src'))
+    .pipe(sync.stream())
+}
+
 const styles = () => {
-  return src('src/scss/style.scss')
+  return src('src/scss/*.scss')
     .pipe(scss({
       outputStyle: 'compressed'
     }))
-    .pipe(concat('style.min.css'))
+    // .pipe(concat())
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
       grid: true
@@ -144,14 +156,16 @@ const fontsStyle = () => {
 }
 
 const watcher = () => {
-  watch(['src/scss/**/*.scss'], styles);
+  watch(['src/**/*.scss'], styles);
   watch(['src/js/**/*.js', '!src/js/main.min.js'], scripts);
   watch(['src/**/*.html']).on('change', sync.reload);
+  watch(['src/*.njk'], nunjucks);
 }
 
 const fonts = series(otfToTtf, ttfToWoff, fontsStyle);
 
 exports.styles = styles;
+exports.nunjucks = nunjucks;
 exports.scripts = scripts;
 exports.browserSync = browserSync;
 exports.images = images;
@@ -160,4 +174,4 @@ exports.reset = reset;
 exports.fonts = fonts;
 exports.watcher = watcher;
 
-exports.default = parallel(styles, scripts, browserSync, watcher);
+exports.default = parallel(nunjucks, styles, scripts, browserSync, watcher);

@@ -1,0 +1,115 @@
+.info-category{
+  padding: 125px 0;
+  background-image: url('../images/dekor/category-left.png');
+  background-repeat: no-repeat;
+  background-position: center left;
+  &__inner{
+    background-image: url('../images/dekor/category-right.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+
+  }
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 115px;
+  position: relative;
+  &::before,
+  &::after{
+    content: '';
+    position: absolute;
+  }
+  &::before{
+    background-image: url('../images/dekor/info-left.png');
+    top: -40px;
+    left: -45px;
+    width: 120px;
+    height: 121px;
+  }
+  &::after{
+    background-image: url('../images/dekor/info-right.png');
+    bottom: -23px;
+    right: -23px;
+    width: 65px;
+    height: 52px;
+  }
+  &__item{
+    width: 370px;
+    box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+    padding: 60px 40px;
+    background-color: #fff;
+    z-index: 1;
+  }
+  &__title{
+    margin: 40px 0 12px 0;
+    color: $title;
+    @extend %roboto-400;
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+.category{
+  &__inner{
+    display: grid;
+    min-height: 635px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+  &__item{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 35px;
+    padding-left: 40px;
+    &:nth-child(1){
+      grid-row: span 2;
+      .category__item-subtitle{
+        color: #5800e4;
+      }
+    }
+    &:nth-child(2){
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 0;
+      grid-column: span 2;
+      .category__item-subtitle{
+        color: $accent;
+      }
+    }
+    &:nth-child(3){
+      .category__item-subtitle{
+        color: #ffb534;
+      }
+    }
+    &:nth-child(4){
+      .category__item-subtitle{
+        color: #34c3ff;
+      }
+    }
+  }
+  &__item-subtitle{
+    margin-bottom: 5px;
+  }
+  &__item-title{
+    @extend %roboto-500;
+    font-size: 22px;
+    color: $title;
+    margin-bottom: 15px;
+  }
+  &__link{
+    @extend %roboto-400;
+    color: $title;
+    text-transform: uppercase;
+    transition: all .3s;
+    &:hover{
+      color: $accent;
+      border-bottom: 1px solid $accent;
+    }
+  }
+}
