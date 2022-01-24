@@ -159,7 +159,7 @@ const watcher = () => {
   watch(['src/**/*.scss'], styles);
   watch(['src/js/**/*.js', '!src/js/main.min.js'], scripts);
   watch(['src/**/*.html']).on('change', sync.reload);
-  watch(['src/*.njk'], nunjucks);
+  watch(['src/njk/*.njk'], nunjucks);
 }
 
 const fonts = series(otfToTtf, ttfToWoff, fontsStyle);
