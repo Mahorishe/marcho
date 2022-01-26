@@ -3,6 +3,10 @@
 @import 'reset';
 @import 'libs';
 @import 'global';
+@import '../module/_header/_header';
+@import '../module/_footer/_footer';
+@import '../module/_product/_product';
+@import '../module/_top/_top';
 
 .catalog{
   padding: 120px 0 105px;
@@ -12,6 +16,9 @@
   &__filters{
     width: 370px;
     margin-right: 30px;
+  }
+  &__filter-btn{
+    display: none;
   }
 }
 
@@ -820,31 +827,6 @@
   }
   &__aside{
     width: 370px;
-  }
-}
-
-.blog-info{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  &__author,
-  &__date{
-    padding-left: 30px;
-    position: relative;
-    &::before{
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      left: 0;
-      top: 4px;
-    }
-  }
-  &__author::before{
-    background-image: url('../images/icons/author.svg')
-  }
-  &__date::before{
-    background-image: url('../images/icons/clock.svg')
   }
 }
 

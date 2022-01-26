@@ -17,7 +17,15 @@ $(function(){
     asNavFor: '.product-slide__thumb',
     draggable: false,
     arrows: false,
-    fade: true
+    fade: true,
+    responsive: [
+      {
+        breakpoint: 1051,
+        settings:{
+          draggable: true
+        }
+      },
+    ]
   });
 
   $(".blog-page__slider").slick({
@@ -37,6 +45,10 @@ $(function(){
 
     $(".product-tabs__content-item").removeClass("product-tabs__content-item--active")
     $($(this).attr('href')).addClass("product-tabs__content-item--active")
+  });
+
+  $(".catalog__filter-btn").on('click', function(){
+    $('.catalog__filters').slideToggle();
   });
  
   $(".filter-price__input").ionRangeSlider({
@@ -59,10 +71,12 @@ $(function(){
 
   $(".button-list").on('click', function() {
     $(".product-item").addClass("product-item--list")
+    $(".catalog-content__inner").addClass("catalog-content__nogrid")
   });
 
   $(".button-grid").on('click', function() {
     $(".product-item").removeClass("product-item--list")
+    $(".catalog-content__inner").removeClass("catalog-content__nogrid")
   });
 
   $(".star-rank").rateYo({

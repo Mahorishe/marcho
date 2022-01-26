@@ -12,6 +12,7 @@
   &__title{
     @extend %roboto-700;
     font-size: 48px;
+    line-height: 54px;
     color: #28384f;
     margin-bottom: 40px;
   }
@@ -21,5 +22,21 @@
   }
   &__link{
     @extend %button;
+  }
+}
+
+@media (max-width: 1230px){
+  .page-404{
+    &__img{
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 992px){
+  .page-404{
+    &__img{
+      display: none;
+    }
   }
 }

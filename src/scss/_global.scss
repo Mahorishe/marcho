@@ -45,6 +45,7 @@ a{
 .breadcrumbs{
   display: inline-flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding-left: 25px;
   position: relative;
   &::before{
@@ -66,11 +67,11 @@ a{
     &::after{
       content: '';
       position: absolute;
-      background-image: url('../images/icons/angle_right.svg');
+      background-image: url('../images/icons/angle-right.svg');
       width: 9px;
       height: 10px;
       top: 9px;
-      right: 15px;
+      right: 16px;
     }
     &:last-child{
       color: $accent;
@@ -128,5 +129,19 @@ a{
       right: 0;
     }
 
+  }
+}
+
+@media (max-width: 620px){
+  .title{
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 375px){
+  .title{
+    font-size: 32px;
+    line-height: 40px;
   }
 }
